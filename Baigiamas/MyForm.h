@@ -1,6 +1,7 @@
 #pragma once
 #include "krovimas.h"
 #include "convert.h"
+#include "kvietimai.h"
 
 extern std::vector<aparatas> aparatuSarasas;
 extern std::vector<std::string> aparataiCombo;
@@ -494,6 +495,7 @@ namespace Baigiamas {
 			resources->ApplyResources(this->button2, L"button2");
 			this->button2->Name = L"button2";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyForm::button2_Click);
 			// 
 			// AparatasNewButton
 			// 
@@ -1054,6 +1056,10 @@ private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e
 		AparatasModelisCMB->Items->Add(stringConvert(aparataiCombo[i]));
 	}
 	aparataiLangUpdate();
+}
+private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	kvietimai^ kviet = gcnew kvietimai();
+	kviet->ShowDialog();
 }
 };
 }
