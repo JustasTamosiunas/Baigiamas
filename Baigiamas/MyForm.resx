@@ -1,0 +1,1821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="AparatasModelisCMB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 63</value>
+  </data>
+  <data name="AparatasModelisCMB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 21</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AparatasModelisCMB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AparatasModelisCMB.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AparatasModelisCMB.Name" xml:space="preserve">
+    <value>AparatasModelisCMB</value>
+  </data>
+  <data name="&gt;&gt;AparatasModelisCMB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasModelisCMB.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatasModelisCMB.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AparatasNextButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>170, 117</value>
+  </data>
+  <data name="AparatasNextButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="AparatasNextButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="AparatasNextButton.Text" xml:space="preserve">
+    <value>----&gt;</value>
+  </data>
+  <data name="&gt;&gt;AparatasNextButton.Name" xml:space="preserve">
+    <value>AparatasNextButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasNextButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasNextButton.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatasNextButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="AparatasPrevButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 117</value>
+  </data>
+  <data name="AparatasPrevButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="AparatasPrevButton.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="AparatasPrevButton.Text" xml:space="preserve">
+    <value>&lt;----</value>
+  </data>
+  <data name="&gt;&gt;AparatasPrevButton.Name" xml:space="preserve">
+    <value>AparatasPrevButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasPrevButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasPrevButton.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatasPrevButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="AparatoKorpNrTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>82, 94</value>
+  </data>
+  <data name="AparatoKorpNrTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="AparatoKorpNrTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrTextBox.Name" xml:space="preserve">
+    <value>AparatoKorpNrTextBox</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrTextBox.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrTextBox.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AparatoKorpNrLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AparatoKorpNrLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 97</value>
+  </data>
+  <data name="AparatoKorpNrLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 13</value>
+  </data>
+  <data name="AparatoKorpNrLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="AparatoKorpNrLabel.Text" xml:space="preserve">
+    <value>EKA korp. nr.</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrLabel.Name" xml:space="preserve">
+    <value>AparatoKorpNrLabel</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrLabel.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoKorpNrLabel.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AparatoModelisTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>78, 63</value>
+  </data>
+  <data name="AparatoModelisTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>154, 20</value>
+  </data>
+  <data name="AparatoModelisTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisTextBox.Name" xml:space="preserve">
+    <value>AparatoModelisTextBox</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisTextBox.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisTextBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="AparatoModelisLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AparatoModelisLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 66</value>
+  </data>
+  <data name="AparatoModelisLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 13</value>
+  </data>
+  <data name="AparatoModelisLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AparatoModelisLabel.Text" xml:space="preserve">
+    <value>EKA modelis</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisLabel.Name" xml:space="preserve">
+    <value>AparatoModelisLabel</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisLabel.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoModelisLabel.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="AparatoNrTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 32</value>
+  </data>
+  <data name="AparatoNrTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 20</value>
+  </data>
+  <data name="AparatoNrTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrTextBox.Name" xml:space="preserve">
+    <value>AparatoNrTextBox</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrTextBox.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrTextBox.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="AparatoNrLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="AparatoNrLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 35</value>
+  </data>
+  <data name="AparatoNrLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>21, 13</value>
+  </data>
+  <data name="AparatoNrLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AparatoNrLabel.Text" xml:space="preserve">
+    <value>Nr.</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrLabel.Name" xml:space="preserve">
+    <value>AparatoNrLabel</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrLabel.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoNrLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SerijaLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SerijaLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 35</value>
+  </data>
+  <data name="SerijaLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="SerijaLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SerijaLabel.Text" xml:space="preserve">
+    <value>Serija</value>
+  </data>
+  <data name="&gt;&gt;SerijaLabel.Name" xml:space="preserve">
+    <value>SerijaLabel</value>
+  </data>
+  <data name="&gt;&gt;SerijaLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SerijaLabel.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;SerijaLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="AparatoSerijaTextBox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Off</value>
+  </data>
+  <data name="AparatoSerijaTextBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 32</value>
+  </data>
+  <data name="AparatoSerijaTextBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 20</value>
+  </data>
+  <data name="AparatoSerijaTextBox.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;AparatoSerijaTextBox.Name" xml:space="preserve">
+    <value>AparatoSerijaTextBox</value>
+  </data>
+  <data name="&gt;&gt;AparatoSerijaTextBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatoSerijaTextBox.Parent" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;AparatoSerijaTextBox.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="TechPasoInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="TechPasoInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>245, 146</value>
+  </data>
+  <data name="TechPasoInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TechPasoInfo.Text" xml:space="preserve">
+    <value>Tech Paso informacija</value>
+  </data>
+  <data name="&gt;&gt;TechPasoInfo.Name" xml:space="preserve">
+    <value>TechPasoInfo</value>
+  </data>
+  <data name="&gt;&gt;TechPasoInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TechPasoInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TechPasoInfo.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="SutartisNextButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisNextButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>136, 117</value>
+  </data>
+  <data name="SutartisNextButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="SutartisNextButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="SutartisNextButton.Text" xml:space="preserve">
+    <value>----&gt;</value>
+  </data>
+  <data name="&gt;&gt;SutartisNextButton.Name" xml:space="preserve">
+    <value>SutartisNextButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisNextButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNextButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisNextButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="SutartisPrevButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisPrevButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 117</value>
+  </data>
+  <data name="SutartisPrevButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="SutartisPrevButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="SutartisPrevButton.Text" xml:space="preserve">
+    <value>&lt;----</value>
+  </data>
+  <data name="&gt;&gt;SutartisPrevButton.Name" xml:space="preserve">
+    <value>SutartisPrevButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisPrevButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisPrevButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisPrevButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SutartisIkiTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 91</value>
+  </data>
+  <data name="SutartisIkiTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="SutartisIkiTB.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiTB.Name" xml:space="preserve">
+    <value>SutartisIkiTB</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiTB.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiTB.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="SutartisIkiLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SutartisIkiLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 94</value>
+  </data>
+  <data name="SutartisIkiLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>18, 13</value>
+  </data>
+  <data name="SutartisIkiLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="SutartisIkiLabel.Text" xml:space="preserve">
+    <value>Iki</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiLabel.Name" xml:space="preserve">
+    <value>SutartisIkiLabel</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisIkiLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="SutartisNuoTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 65</value>
+  </data>
+  <data name="SutartisNuoTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="SutartisNuoTB.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoTB.Name" xml:space="preserve">
+    <value>SutartisNuoTB</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoTB.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoTB.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="SutartisNuoLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SutartisNuoLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 68</value>
+  </data>
+  <data name="SutartisNuoLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 13</value>
+  </data>
+  <data name="SutartisNuoLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="SutartisNuoLabel.Text" xml:space="preserve">
+    <value>Nuo</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoLabel.Name" xml:space="preserve">
+    <value>SutartisNuoLabel</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisNuoLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="SutartisTipasTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 39</value>
+  </data>
+  <data name="SutartisTipasTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="SutartisTipasTB.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasTB.Name" xml:space="preserve">
+    <value>SutartisTipasTB</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasTB.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasTB.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="SutartisTipasLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SutartisTipasLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="SutartisTipasLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>33, 13</value>
+  </data>
+  <data name="SutartisTipasLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="SutartisTipasLabel.Text" xml:space="preserve">
+    <value>Tipas</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasLabel.Name" xml:space="preserve">
+    <value>SutartisTipasLabel</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisTipasLabel.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SutartisNumerisLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="SutartisNumerisLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="SutartisNumerisLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="SutartisNumerisLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="SutartisNumerisLabel.Text" xml:space="preserve">
+    <value>Numeris</value>
+  </data>
+  <data name="&gt;&gt;SutartisNumerisLabel.Name" xml:space="preserve">
+    <value>SutartisNumerisLabel</value>
+  </data>
+  <data name="&gt;&gt;SutartisNumerisLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNumerisLabel.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisNumerisLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SutartisNrTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>57, 13</value>
+  </data>
+  <data name="SutartisNrTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 20</value>
+  </data>
+  <data name="SutartisNrTB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;SutartisNrTB.Name" xml:space="preserve">
+    <value>SutartisNrTB</value>
+  </data>
+  <data name="&gt;&gt;SutartisNrTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNrTB.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;SutartisNrTB.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>263, 12</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>217, 146</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Sutartis</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="IrasaiNextButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasaiNextButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>87, 132</value>
+  </data>
+  <data name="IrasaiNextButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="IrasaiNextButton.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="IrasaiNextButton.Text" xml:space="preserve">
+    <value>----&gt;</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNextButton.Name" xml:space="preserve">
+    <value>IrasaiNextButton</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNextButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNextButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNextButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="IrasaiPrevButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasaiPrevButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 132</value>
+  </data>
+  <data name="IrasaiPrevButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="IrasaiPrevButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="IrasaiPrevButton.Text" xml:space="preserve">
+    <value>&lt;----</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPrevButton.Name" xml:space="preserve">
+    <value>IrasaiPrevButton</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPrevButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPrevButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPrevButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="IrasaiMeistrasTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 91</value>
+  </data>
+  <data name="IrasaiMeistrasTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiMeistrasTB.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasTB.Name" xml:space="preserve">
+    <value>IrasaiMeistrasTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasTB.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="IrasaiMeistrasLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiMeistrasLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 94</value>
+  </data>
+  <data name="IrasaiMeistrasLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>46, 13</value>
+  </data>
+  <data name="IrasaiMeistrasLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="IrasaiMeistrasLabel.Text" xml:space="preserve">
+    <value>Meistras</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasLabel.Name" xml:space="preserve">
+    <value>IrasaiMeistrasLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMeistrasLabel.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="IrasaiNumerisTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 65</value>
+  </data>
+  <data name="IrasaiNumerisTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiNumerisTB.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisTB.Name" xml:space="preserve">
+    <value>IrasaiNumerisTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisTB.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="IrasaiNumerisLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiNumerisLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 68</value>
+  </data>
+  <data name="IrasaiNumerisLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 13</value>
+  </data>
+  <data name="IrasaiNumerisLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="IrasaiNumerisLabel.Text" xml:space="preserve">
+    <value>Numeris</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisLabel.Name" xml:space="preserve">
+    <value>IrasaiNumerisLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiNumerisLabel.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="IrasaiMiestasTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 13</value>
+  </data>
+  <data name="IrasaiMiestasTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiMiestasTB.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasTB.Name" xml:space="preserve">
+    <value>IrasaiMiestasTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasTB.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="IrasaiGatveTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>346, 39</value>
+  </data>
+  <data name="IrasaiGatveTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiGatveTB.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveTB.Name" xml:space="preserve">
+    <value>IrasaiGatveTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveTB.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="IrasaiGatveLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiGatveLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 42</value>
+  </data>
+  <data name="IrasaiGatveLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>36, 13</value>
+  </data>
+  <data name="IrasaiGatveLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="IrasaiGatveLabel.Text" xml:space="preserve">
+    <value>Gatvė</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveLabel.Name" xml:space="preserve">
+    <value>IrasaiGatveLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiGatveLabel.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="IrasaiMiestasLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiMiestasLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>281, 16</value>
+  </data>
+  <data name="IrasaiMiestasLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 13</value>
+  </data>
+  <data name="IrasaiMiestasLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="IrasaiMiestasLabel.Text" xml:space="preserve">
+    <value>Miestas</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasLabel.Name" xml:space="preserve">
+    <value>IrasaiMiestasLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiMiestasLabel.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="IrasaiTelefonaiTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 91</value>
+  </data>
+  <data name="IrasaiTelefonaiTB.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiTelefonaiTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 35</value>
+  </data>
+  <data name="IrasaiTelefonaiTB.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiTB.Name" xml:space="preserve">
+    <value>IrasaiTelefonaiTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiTB.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="IrasaiTelefonaiLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiTelefonaiLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 94</value>
+  </data>
+  <data name="IrasaiTelefonaiLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 13</value>
+  </data>
+  <data name="IrasaiTelefonaiLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="IrasaiTelefonaiLabel.Text" xml:space="preserve">
+    <value>Telefonai</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiLabel.Name" xml:space="preserve">
+    <value>IrasaiTelefonaiLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiTelefonaiLabel.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="IrasaiPagrindasTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 65</value>
+  </data>
+  <data name="IrasaiPagrindasTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiPagrindasTB.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPagrindasTB.Name" xml:space="preserve">
+    <value>IrasaiPagrindasTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPagrindasTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPagrindasTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPagrindasTB.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="IrasaiPaagrindasLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiPaagrindasLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 68</value>
+  </data>
+  <data name="IrasaiPaagrindasLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>54, 13</value>
+  </data>
+  <data name="IrasaiPaagrindasLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="IrasaiPaagrindasLabel.Text" xml:space="preserve">
+    <value>Pagrindas</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPaagrindasLabel.Name" xml:space="preserve">
+    <value>IrasaiPaagrindasLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPaagrindasLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPaagrindasLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiPaagrindasLabel.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="IrasaiDataTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 39</value>
+  </data>
+  <data name="IrasaiDataTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiDataTB.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataTB.Name" xml:space="preserve">
+    <value>IrasaiDataTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataTB.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="IrasaiDataLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiDataLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 42</value>
+  </data>
+  <data name="IrasaiDataLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>30, 13</value>
+  </data>
+  <data name="IrasaiDataLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="IrasaiDataLabel.Text" xml:space="preserve">
+    <value>Data</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataLabel.Name" xml:space="preserve">
+    <value>IrasaiDataLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiDataLabel.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="IrasaiSavininkasLabel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="IrasaiSavininkasLabel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="IrasaiSavininkasLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 13</value>
+  </data>
+  <data name="IrasaiSavininkasLabel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="IrasaiSavininkasLabel.Text" xml:space="preserve">
+    <value>Savininkas</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasLabel.Name" xml:space="preserve">
+    <value>IrasaiSavininkasLabel</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasLabel.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasLabel.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="IrasaiSavininkasTB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 13</value>
+  </data>
+  <data name="IrasaiSavininkasTB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="IrasaiSavininkasTB.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasTB.Name" xml:space="preserve">
+    <value>IrasaiSavininkasTB</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasTB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasTB.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSavininkasTB.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 164</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>540, 161</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Tech paso įrašai</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>486, 17</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 141</value>
+  </data>
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>Iškvietimai</value>
+  </data>
+  <data name="&gt;&gt;button2.Name" xml:space="preserve">
+    <value>button2</value>
+  </data>
+  <data name="&gt;&gt;button2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button2.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="AparatasNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 17</value>
+  </data>
+  <data name="AparatasNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="AparatasNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="AparatasNewButton.Text" xml:space="preserve">
+    <value>Naujas aparatas</value>
+  </data>
+  <data name="&gt;&gt;AparatasNewButton.Name" xml:space="preserve">
+    <value>AparatasNewButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasNewButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasNewButton.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="SutartisNewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 46</value>
+  </data>
+  <data name="SutartisNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="SutartisNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="SutartisNewButton.Text" xml:space="preserve">
+    <value>Nauja sutartis</value>
+  </data>
+  <data name="&gt;&gt;SutartisNewButton.Name" xml:space="preserve">
+    <value>SutartisNewButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisNewButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisNewButton.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="IrasasNewButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasNewButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 75</value>
+  </data>
+  <data name="IrasasNewButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="IrasasNewButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="IrasasNewButton.Text" xml:space="preserve">
+    <value>Naujas įrašas</value>
+  </data>
+  <data name="&gt;&gt;IrasasNewButton.Name" xml:space="preserve">
+    <value>IrasasNewButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasNewButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasNewButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasNewButton.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="AparatasSaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AparatasSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 18</value>
+  </data>
+  <data name="AparatasSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="AparatasSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="AparatasSaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="AparatasSaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AparatasSaveButton.Name" xml:space="preserve">
+    <value>AparatasSaveButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasSaveButton.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="SutartisSaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 47</value>
+  </data>
+  <data name="SutartisSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="SutartisSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="SutartisSaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="SutartisSaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SutartisSaveButton.Name" xml:space="preserve">
+    <value>SutartisSaveButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisSaveButton.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="IrasaiSaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasaiSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 75</value>
+  </data>
+  <data name="IrasaiSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="IrasaiSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="IrasaiSaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="IrasaiSaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSaveButton.Name" xml:space="preserve">
+    <value>IrasaiSaveButton</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasaiSaveButton.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="AparatasEditButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt</value>
+  </data>
+  <data name="AparatasEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 104</value>
+  </data>
+  <data name="AparatasEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="AparatasEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="AparatasEditButton.Text" xml:space="preserve">
+    <value>Redaguoti aparatą</value>
+  </data>
+  <data name="&gt;&gt;AparatasEditButton.Name" xml:space="preserve">
+    <value>AparatasEditButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasEditButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasEditButton.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="SutartisEditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 132</value>
+  </data>
+  <data name="SutartisEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="SutartisEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="SutartisEditButton.Text" xml:space="preserve">
+    <value>Redaguoti sutartį</value>
+  </data>
+  <data name="&gt;&gt;SutartisEditButton.Name" xml:space="preserve">
+    <value>SutartisEditButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisEditButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisEditButton.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="IrasasEditButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasEditButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 160</value>
+  </data>
+  <data name="IrasasEditButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 22</value>
+  </data>
+  <data name="IrasasEditButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="IrasasEditButton.Text" xml:space="preserve">
+    <value>Redaguoti įrašą</value>
+  </data>
+  <data name="&gt;&gt;IrasasEditButton.Name" xml:space="preserve">
+    <value>IrasasEditButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasEditButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasEditButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasEditButton.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="AparatasESaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AparatasESaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 103</value>
+  </data>
+  <data name="AparatasESaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="AparatasESaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="AparatasESaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="AparatasESaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AparatasESaveButton.Name" xml:space="preserve">
+    <value>AparatasESaveButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasESaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasESaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasESaveButton.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="SutartisESaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisESaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 132</value>
+  </data>
+  <data name="SutartisESaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="SutartisESaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="SutartisESaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="SutartisESaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SutartisESaveButton.Name" xml:space="preserve">
+    <value>SutartisESaveButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisESaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisESaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisESaveButton.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="IrasasESaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasESaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 161</value>
+  </data>
+  <data name="IrasasESaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="IrasasESaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="IrasasESaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="IrasasESaveButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;IrasasESaveButton.Name" xml:space="preserve">
+    <value>IrasasESaveButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasESaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasESaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasESaveButton.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="MainSaveButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="MainSaveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 302</value>
+  </data>
+  <data name="MainSaveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="MainSaveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="MainSaveButton.Text" xml:space="preserve">
+    <value>Išsaugoti</value>
+  </data>
+  <data name="&gt;&gt;MainSaveButton.Name" xml:space="preserve">
+    <value>MainSaveButton</value>
+  </data>
+  <data name="&gt;&gt;MainSaveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;MainSaveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;MainSaveButton.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="AparatasDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 190</value>
+  </data>
+  <data name="AparatasDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="AparatasDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="AparatasDeleteButton.Text" xml:space="preserve">
+    <value>Ištrinti aparatą</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteButton.Name" xml:space="preserve">
+    <value>AparatasDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteButton.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="SutartisDeleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 219</value>
+  </data>
+  <data name="SutartisDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="SutartisDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="SutartisDeleteButton.Text" xml:space="preserve">
+    <value>Ištrinti sutartį</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteButton.Name" xml:space="preserve">
+    <value>SutartisDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="IrasasDeleteButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasDeleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 248</value>
+  </data>
+  <data name="IrasasDeleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 23</value>
+  </data>
+  <data name="IrasasDeleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="IrasasDeleteButton.Text" xml:space="preserve">
+    <value>Ištrinti įrašą</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteButton.Name" xml:space="preserve">
+    <value>IrasasDeleteButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="AparatasDeleteCYButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="AparatasDeleteCYButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AparatasDeleteCYButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 190</value>
+  </data>
+  <data name="AparatasDeleteCYButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 23</value>
+  </data>
+  <data name="AparatasDeleteCYButton.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
+  </data>
+  <data name="AparatasDeleteCYButton.Text" xml:space="preserve">
+    <value>Patvirtinti</value>
+  </data>
+  <data name="AparatasDeleteCYButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCYButton.Name" xml:space="preserve">
+    <value>AparatasDeleteCYButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCYButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCYButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCYButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="SutartisDeleteCYButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="SutartisDeleteCYButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisDeleteCYButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 219</value>
+  </data>
+  <data name="SutartisDeleteCYButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 23</value>
+  </data>
+  <data name="SutartisDeleteCYButton.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="SutartisDeleteCYButton.Text" xml:space="preserve">
+    <value>Patvirtinti</value>
+  </data>
+  <data name="SutartisDeleteCYButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCYButton.Name" xml:space="preserve">
+    <value>SutartisDeleteCYButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCYButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCYButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCYButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="IrasasDeleteCYButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 8.25pt, style=Bold</value>
+  </data>
+  <data name="IrasasDeleteCYButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasDeleteCYButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>558, 248</value>
+  </data>
+  <data name="IrasasDeleteCYButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 23</value>
+  </data>
+  <data name="IrasasDeleteCYButton.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="IrasasDeleteCYButton.Text" xml:space="preserve">
+    <value>Patvirtinti</value>
+  </data>
+  <data name="IrasasDeleteCYButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCYButton.Name" xml:space="preserve">
+    <value>IrasasDeleteCYButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCYButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCYButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCYButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="AparatasDeleteCNButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 190</value>
+  </data>
+  <data name="AparatasDeleteCNButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="AparatasDeleteCNButton.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="AparatasDeleteCNButton.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="AparatasDeleteCNButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCNButton.Name" xml:space="preserve">
+    <value>AparatasDeleteCNButton</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCNButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCNButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;AparatasDeleteCNButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="IrasasDeleteCNButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="IrasasDeleteCNButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 248</value>
+  </data>
+  <data name="IrasasDeleteCNButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="IrasasDeleteCNButton.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="IrasasDeleteCNButton.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="IrasasDeleteCNButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCNButton.Name" xml:space="preserve">
+    <value>IrasasDeleteCNButton</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCNButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCNButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IrasasDeleteCNButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="SutartisDeleteCNButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="SutartisDeleteCNButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>638, 219</value>
+  </data>
+  <data name="SutartisDeleteCNButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>27, 23</value>
+  </data>
+  <data name="SutartisDeleteCNButton.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="SutartisDeleteCNButton.Text" xml:space="preserve">
+    <value>X</value>
+  </data>
+  <data name="SutartisDeleteCNButton.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCNButton.Name" xml:space="preserve">
+    <value>SutartisDeleteCNButton</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCNButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCNButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;SutartisDeleteCNButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>671, 329</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>MyForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MyForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>
