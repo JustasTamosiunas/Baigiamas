@@ -95,13 +95,12 @@ void ikrovimas() {
 				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().I_paskyrimas, '^');
 				failas.get(test);
 				if (test == '\n') {
+					aparatuSarasas[i].aparatRemontai.back().atlikta = false;
 					break;
 				}
 				else {
 					if (test == '1')
 						aparatuSarasas[i].aparatRemontai.back().atlikta = true;
-					else if (test == '0')
-						aparatuSarasas[i].aparatRemontai.back().atlikta = false;
 					failas.get(test);
 					std::getline(failas, aparatuSarasas[i].aparatRemontai.back().A_data, '^');
 					std::getline(failas, aparatuSarasas[i].aparatRemontai.back().A_laikas, '^');
