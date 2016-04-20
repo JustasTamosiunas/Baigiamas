@@ -11,6 +11,7 @@ int irasaiCID = 0;
 void aparataiLangUpdate();
 void sutartysLangUpdate();
 void irasaiLangUpdate();
+void saveButtonRed();
 
 namespace Baigiamas {
 
@@ -760,6 +761,9 @@ namespace Baigiamas {
 			SutartisNuoTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].nuo);
 			SutartisIkiTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki);
 			SutartisTipasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].tipas);
+		}
+		void saveButtonRed() {
+			MainSaveButton->BackColor = System::Drawing::Color::Red;
 		}
 #pragma endregion
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {

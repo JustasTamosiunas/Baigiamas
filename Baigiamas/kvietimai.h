@@ -3,10 +3,9 @@
 extern std::vector<aparatas> aparatuSarasas;
 extern int aparataiCID;
 int remontaiCID = 0;
-bool tempAtlikt = false;
+bool tempAtlikt;
 
 void remontaiLangUpdate();
-bool buttonUpdate();
 
 namespace Baigiamas {
 
@@ -426,12 +425,14 @@ namespace Baigiamas {
 			// 
 			// AtlikStatusBTN
 			// 
+			this->AtlikStatusBTN->Enabled = false;
 			this->AtlikStatusBTN->Location = System::Drawing::Point(60, 13);
 			this->AtlikStatusBTN->Name = L"AtlikStatusBTN";
 			this->AtlikStatusBTN->Size = System::Drawing::Size(141, 31);
 			this->AtlikStatusBTN->TabIndex = 18;
 			this->AtlikStatusBTN->Text = L"Ne";
 			this->AtlikStatusBTN->UseVisualStyleBackColor = true;
+			this->AtlikStatusBTN->Click += gcnew System::EventHandler(this, &kvietimai::AtlikStatusBTN_Click);
 			// 
 			// AtlikStatusLabel
 			// 
@@ -451,6 +452,8 @@ namespace Baigiamas {
 			this->IskvietDelConfirmBTN->TabIndex = 20;
 			this->IskvietDelConfirmBTN->Text = L"Tikrai";
 			this->IskvietDelConfirmBTN->UseVisualStyleBackColor = false;
+			this->IskvietDelConfirmBTN->Visible = false;
+			this->IskvietDelConfirmBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietDelConfirmBTN_Click);
 			// 
 			// IskvietDelCancelBTN
 			// 
@@ -461,6 +464,8 @@ namespace Baigiamas {
 			this->IskvietDelCancelBTN->TabIndex = 21;
 			this->IskvietDelCancelBTN->Text = L"X";
 			this->IskvietDelCancelBTN->UseVisualStyleBackColor = false;
+			this->IskvietDelCancelBTN->Visible = false;
+			this->IskvietDelCancelBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietDelCancelBTN_Click);
 			// 
 			// IskvietEditSaveBTN
 			// 
@@ -470,6 +475,8 @@ namespace Baigiamas {
 			this->IskvietEditSaveBTN->TabIndex = 22;
 			this->IskvietEditSaveBTN->Text = L"Iðsaugoti";
 			this->IskvietEditSaveBTN->UseVisualStyleBackColor = true;
+			this->IskvietEditSaveBTN->Visible = false;
+			this->IskvietEditSaveBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietEditSaveBTN_Click);
 			// 
 			// IskvietNewSaveBTN
 			// 
@@ -479,6 +486,7 @@ namespace Baigiamas {
 			this->IskvietNewSaveBTN->TabIndex = 23;
 			this->IskvietNewSaveBTN->Text = L"Iðsaugoti";
 			this->IskvietNewSaveBTN->UseVisualStyleBackColor = true;
+			this->IskvietNewSaveBTN->Visible = false;
 			this->IskvietNewSaveBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietNewSaveBTN_Click);
 			// 
 			// kvietimai
@@ -511,39 +519,31 @@ namespace Baigiamas {
 
 		}
 		void remontaiLangUpdate() {
-			IskvietDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_data);
-			iskvietAprasymasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_aprasymas);
-			IskvietLaikasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_laikas);
-			IskvietPaskirtaTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_paskyrimas);
-			IskvietTelefonaiTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_telefonas);
-			IskvietVardTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_kvietejas);
-			if (aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta) {
-				AtlikStatusBTN->BackColor = System::Drawing::Color::ForestGreen;
-				AtlikStatusBTN->Text = L"Taip";
-				AtlikAprasymasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_aprasymas);
-				AtlikDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_data);
-				AtlikLaikasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_laikas);
-				AtlikMeistrasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_meistras);
-				AtlikPastabosTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_pastabos);
-			}
-			else {
-				AtlikStatusBTN->BackColor = System::Drawing::Color::Red;
-				AtlikStatusBTN->Text = L"Ne";
-				AtlikAprasymasTB->Text = L"";
-				AtlikDataTB->Text = L"";
-				AtlikLaikasTB->Text = L"";
-				AtlikMeistrasTB->Text = L"";
-				AtlikPastabosTB->Text = L"";
-			}
-		}
-		bool buttonUpdate() {
-			if (tempAtlikt) {
-				AtlikStatusBTN->BackColor = System::Drawing::Color::Red;
-				tempAtlikt = false;
-			}
-			else {
-				AtlikStatusBTN->BackColor = System::Drawing::Color::ForestGreen;
-				tempAtlikt = true;
+			if (aparatuSarasas[aparataiCID].aparatRemontai.size() != 0) {
+				IskvietDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_data);
+				iskvietAprasymasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_aprasymas);
+				IskvietLaikasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_laikas);
+				IskvietPaskirtaTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_paskyrimas);
+				IskvietTelefonaiTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_telefonas);
+				IskvietVardTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_kvietejas);
+				if (aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta) {
+					AtlikStatusBTN->BackColor = System::Drawing::Color::ForestGreen;
+					AtlikStatusBTN->Text = L"Taip";
+					AtlikAprasymasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_aprasymas);
+					AtlikDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_data);
+					AtlikLaikasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_laikas);
+					AtlikMeistrasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_meistras);
+					AtlikPastabosTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_pastabos);
+				}
+				else {
+					AtlikStatusBTN->BackColor = System::Drawing::Color::Red;
+					AtlikStatusBTN->Text = L"Ne";
+					AtlikAprasymasTB->Text = L"";
+					AtlikDataTB->Text = L"";
+					AtlikLaikasTB->Text = L"";
+					AtlikMeistrasTB->Text = L"";
+					AtlikPastabosTB->Text = L"";
+				}
 			}
 		}
 #pragma endregion
@@ -565,6 +565,7 @@ private: System::Void IskvietNewBTN_Click(System::Object^  sender, System::Event
 	aparatuSarasas[aparataiCID].aparatRemontai.push_back(temp);
 	remontaiCID = aparatuSarasas[aparataiCID].aparatRemontai.size() - 1;
 	remontaiLangUpdate();
+	AtlikStatusBTN->Enabled = true;
 	iskvietAprasymasTB->ReadOnly = false;
 	IskvietDataTB->ReadOnly = false;
 	IskvietLaikasTB->ReadOnly = false;
@@ -577,8 +578,11 @@ private: System::Void IskvietNewBTN_Click(System::Object^  sender, System::Event
 	AtlikMeistrasTB->ReadOnly = false;
 	AtlikPastabosTB->ReadOnly = false;
 	AtlikStatusBTN->Enabled = true;
+	IskvietNewBTN->Visible = false;
+	IskvietNewSaveBTN->Visible = true;
 }
 private: System::Void IskvietEditBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	AtlikStatusBTN->Enabled = true;
 	iskvietAprasymasTB->ReadOnly = false;
 	IskvietDataTB->ReadOnly = false;
 	IskvietLaikasTB->ReadOnly = false;
@@ -591,9 +595,13 @@ private: System::Void IskvietEditBTN_Click(System::Object^  sender, System::Even
 	AtlikMeistrasTB->ReadOnly = false;
 	AtlikPastabosTB->ReadOnly = false;
 	AtlikStatusBTN->Enabled = true;
+	IskvietEditBTN->Visible = false;
+	IskvietEditSaveBTN->Visible = true;
 }
 private: System::Void IskvietDeleteBTN_Click(System::Object^  sender, System::EventArgs^  e) {
-	
+	IskvietDeleteBTN->Visible = false;
+	IskvietDelConfirmBTN->Visible = true;
+	IskvietDelCancelBTN->Visible = true;
 }
 private: System::Void IskvietNewSaveBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_aprasymas = stringConvert(iskvietAprasymasTB->Text);
@@ -602,6 +610,59 @@ private: System::Void IskvietNewSaveBTN_Click(System::Object^  sender, System::E
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_laikas = stringConvert(IskvietLaikasTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_paskyrimas = stringConvert(IskvietPaskirtaTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_telefonas = stringConvert(IskvietTelefonaiTB->Text);
+	if (tempAtlikt)
+		aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta = true;
+	else
+		aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta = false;
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_aprasymas = stringConvert(AtlikAprasymasTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_data = stringConvert(AtlikDataTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_laikas = stringConvert(AtlikLaikasTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_meistras = stringConvert(AtlikMeistrasTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_pastabos = stringConvert(AtlikPastabosTB->Text);
+	iskvietAprasymasTB->ReadOnly = true;
+	IskvietDataTB->ReadOnly = true;
+	IskvietLaikasTB->ReadOnly = true;
+	IskvietPaskirtaTB->ReadOnly = true;
+	IskvietVardTB->ReadOnly = true;
+	IskvietTelefonaiTB->ReadOnly = true;
+	AtlikAprasymasTB->ReadOnly = true;
+	AtlikDataTB->ReadOnly = true;
+	AtlikMeistrasTB->ReadOnly = true;
+	AtlikLaikasTB->ReadOnly = true;
+	AtlikPastabosTB->ReadOnly = true;
+	IskvietNewSaveBTN->Visible = false;
+	IskvietNewBTN->Visible = true;
+	AtlikStatusBTN->Enabled = false;
+	remontaiLangUpdate();
+}
+private: System::Void AtlikStatusBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	if (AtlikStatusBTN->BackColor == System::Drawing::Color::ForestGreen) {
+		AtlikStatusBTN->BackColor = System::Drawing::Color::Red;
+		tempAtlikt = false;
+	}
+	else {
+		AtlikStatusBTN->BackColor = System::Drawing::Color::ForestGreen;
+		tempAtlikt = true;
+	}
+}
+private: System::Void IskvietEditSaveBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	IskvietNewSaveBTN_Click(sender, e);
+	IskvietEditSaveBTN->Visible = false;
+	IskvietEditBTN->Visible = true;
+	AtlikStatusBTN->Enabled = false;
+}
+private: System::Void IskvietDelConfirmBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	aparatuSarasas[aparataiCID].aparatRemontai.erase(aparatuSarasas[aparataiCID].aparatRemontai.begin() + remontaiCID);
+	remontaiCID = 0;
+	remontaiLangUpdate();
+	IskvietDelCancelBTN->Visible = false;
+	IskvietDelConfirmBTN->Visible = false;
+	IskvietDeleteBTN->Visible = true;
+}
+private: System::Void IskvietDelCancelBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	IskvietDelCancelBTN->Visible = false;
+	IskvietDelConfirmBTN->Visible = false;
+	IskvietDeleteBTN->Visible = true;
 }
 };
 }
