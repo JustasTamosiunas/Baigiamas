@@ -1,14 +1,12 @@
 #pragma once
 #include "MyForm.h"
-extern std::vector<aparatas> aparatuSarasas;
-extern int aparataiCID;
-int remontaiCID = 0;
+extern std::vector<aparatas> aparatuSarasas; // Pasiekiamas iðorinis vectorius
+extern int aparataiCID; //Pasiekiamas dabartinio aparato ID
+int remontaiCID = 0; //Dabar rodomø duomenø ID
 bool tempAtlikt;
 
 void remontaiLangUpdate();
-
 namespace Baigiamas {
-
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -87,6 +85,8 @@ namespace Baigiamas {
 	private: System::Windows::Forms::Button^  IskvietDelCancelBTN;
 	private: System::Windows::Forms::Button^  IskvietEditSaveBTN;
 	private: System::Windows::Forms::Button^  IskvietNewSaveBTN;
+	private: System::Windows::Forms::DateTimePicker^  IskvietDataDTP;
+	private: System::Windows::Forms::DateTimePicker^  AtlikDataDTP;
 
 
 	private:
@@ -103,6 +103,7 @@ namespace Baigiamas {
 		void InitializeComponent(void)
 		{
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->IskvietDataDTP = (gcnew System::Windows::Forms::DateTimePicker());
 			this->IskvietTelefonaiTB = (gcnew System::Windows::Forms::TextBox());
 			this->IskvietTelefonaiLabel = (gcnew System::Windows::Forms::Label());
 			this->IskvietPaskirtaTB = (gcnew System::Windows::Forms::TextBox());
@@ -116,6 +117,7 @@ namespace Baigiamas {
 			this->IskvietDataTB = (gcnew System::Windows::Forms::TextBox());
 			this->IskvietDataLabel = (gcnew System::Windows::Forms::Label());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->AtlikDataDTP = (gcnew System::Windows::Forms::DateTimePicker());
 			this->AtlikPastabosLabel = (gcnew System::Windows::Forms::Label());
 			this->AtlikPastabosTB = (gcnew System::Windows::Forms::TextBox());
 			this->AtlikAprasymasTB = (gcnew System::Windows::Forms::TextBox());
@@ -143,6 +145,7 @@ namespace Baigiamas {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->IskvietDataDTP);
 			this->groupBox1->Controls->Add(this->IskvietTelefonaiTB);
 			this->groupBox1->Controls->Add(this->IskvietTelefonaiLabel);
 			this->groupBox1->Controls->Add(this->IskvietPaskirtaTB);
@@ -162,13 +165,23 @@ namespace Baigiamas {
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Iðkvietimo info";
 			// 
+			// IskvietDataDTP
+			// 
+			this->IskvietDataDTP->CustomFormat = L"dd/MM/yyyy";
+			this->IskvietDataDTP->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->IskvietDataDTP->Location = System::Drawing::Point(91, 17);
+			this->IskvietDataDTP->Name = L"IskvietDataDTP";
+			this->IskvietDataDTP->Size = System::Drawing::Size(100, 20);
+			this->IskvietDataDTP->TabIndex = 1;
+			this->IskvietDataDTP->Visible = false;
+			// 
 			// IskvietTelefonaiTB
 			// 
 			this->IskvietTelefonaiTB->Location = System::Drawing::Point(64, 176);
 			this->IskvietTelefonaiTB->Name = L"IskvietTelefonaiTB";
 			this->IskvietTelefonaiTB->ReadOnly = true;
 			this->IskvietTelefonaiTB->Size = System::Drawing::Size(332, 20);
-			this->IskvietTelefonaiTB->TabIndex = 11;
+			this->IskvietTelefonaiTB->TabIndex = 6;
 			// 
 			// IskvietTelefonaiLabel
 			// 
@@ -185,7 +198,7 @@ namespace Baigiamas {
 			this->IskvietPaskirtaTB->Name = L"IskvietPaskirtaTB";
 			this->IskvietPaskirtaTB->ReadOnly = true;
 			this->IskvietPaskirtaTB->Size = System::Drawing::Size(315, 20);
-			this->IskvietPaskirtaTB->TabIndex = 9;
+			this->IskvietPaskirtaTB->TabIndex = 5;
 			// 
 			// IskvietPaskirtaLabel
 			// 
@@ -204,7 +217,7 @@ namespace Baigiamas {
 			this->iskvietAprasymasTB->Name = L"iskvietAprasymasTB";
 			this->iskvietAprasymasTB->ReadOnly = true;
 			this->iskvietAprasymasTB->Size = System::Drawing::Size(325, 75);
-			this->iskvietAprasymasTB->TabIndex = 7;
+			this->iskvietAprasymasTB->TabIndex = 3;
 			// 
 			// IskvietAprasymasLabel
 			// 
@@ -221,7 +234,7 @@ namespace Baigiamas {
 			this->IskvietVardTB->Name = L"IskvietVardTB";
 			this->IskvietVardTB->ReadOnly = true;
 			this->IskvietVardTB->Size = System::Drawing::Size(333, 20);
-			this->IskvietVardTB->TabIndex = 5;
+			this->IskvietVardTB->TabIndex = 4;
 			// 
 			// IskvietVardLabel
 			// 
@@ -238,7 +251,7 @@ namespace Baigiamas {
 			this->IskvietLaikasTB->Name = L"IskvietLaikasTB";
 			this->IskvietLaikasTB->ReadOnly = true;
 			this->IskvietLaikasTB->Size = System::Drawing::Size(100, 20);
-			this->IskvietLaikasTB->TabIndex = 3;
+			this->IskvietLaikasTB->TabIndex = 2;
 			// 
 			// IskvietLaikasLabel
 			// 
@@ -268,6 +281,7 @@ namespace Baigiamas {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->AtlikDataDTP);
 			this->groupBox2->Controls->Add(this->AtlikPastabosLabel);
 			this->groupBox2->Controls->Add(this->AtlikPastabosTB);
 			this->groupBox2->Controls->Add(this->AtlikAprasymasTB);
@@ -283,7 +297,17 @@ namespace Baigiamas {
 			this->groupBox2->Size = System::Drawing::Size(407, 206);
 			this->groupBox2->TabIndex = 12;
 			this->groupBox2->TabStop = false;
-			this->groupBox2->Text = L"Iðkvietimo info";
+			this->groupBox2->Text = L"Atlikimo info";
+			// 
+			// AtlikDataDTP
+			// 
+			this->AtlikDataDTP->CustomFormat = L"dd/MM/yyyy";
+			this->AtlikDataDTP->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->AtlikDataDTP->Location = System::Drawing::Point(91, 17);
+			this->AtlikDataDTP->Name = L"AtlikDataDTP";
+			this->AtlikDataDTP->Size = System::Drawing::Size(100, 20);
+			this->AtlikDataDTP->TabIndex = 7;
+			this->AtlikDataDTP->Visible = false;
 			// 
 			// AtlikPastabosLabel
 			// 
@@ -301,7 +325,7 @@ namespace Baigiamas {
 			this->AtlikPastabosTB->Name = L"AtlikPastabosTB";
 			this->AtlikPastabosTB->ReadOnly = true;
 			this->AtlikPastabosTB->Size = System::Drawing::Size(333, 50);
-			this->AtlikPastabosTB->TabIndex = 9;
+			this->AtlikPastabosTB->TabIndex = 11;
 			// 
 			// AtlikAprasymasTB
 			// 
@@ -311,7 +335,7 @@ namespace Baigiamas {
 			this->AtlikAprasymasTB->Name = L"AtlikAprasymasTB";
 			this->AtlikAprasymasTB->ReadOnly = true;
 			this->AtlikAprasymasTB->Size = System::Drawing::Size(325, 75);
-			this->AtlikAprasymasTB->TabIndex = 7;
+			this->AtlikAprasymasTB->TabIndex = 9;
 			// 
 			// AtlikAprasymasLabel
 			// 
@@ -328,7 +352,7 @@ namespace Baigiamas {
 			this->AtlikMeistrasTB->Name = L"AtlikMeistrasTB";
 			this->AtlikMeistrasTB->ReadOnly = true;
 			this->AtlikMeistrasTB->Size = System::Drawing::Size(332, 20);
-			this->AtlikMeistrasTB->TabIndex = 5;
+			this->AtlikMeistrasTB->TabIndex = 10;
 			// 
 			// AtlikMeistrasLabel
 			// 
@@ -345,7 +369,7 @@ namespace Baigiamas {
 			this->AtlikLaikasTB->Name = L"AtlikLaikasTB";
 			this->AtlikLaikasTB->ReadOnly = true;
 			this->AtlikLaikasTB->Size = System::Drawing::Size(100, 20);
-			this->AtlikLaikasTB->TabIndex = 3;
+			this->AtlikLaikasTB->TabIndex = 8;
 			// 
 			// AtlikLaikasLabel
 			// 
@@ -378,7 +402,7 @@ namespace Baigiamas {
 			this->IskvietPrevBTN->Location = System::Drawing::Point(10, 474);
 			this->IskvietPrevBTN->Name = L"IskvietPrevBTN";
 			this->IskvietPrevBTN->Size = System::Drawing::Size(75, 23);
-			this->IskvietPrevBTN->TabIndex = 13;
+			this->IskvietPrevBTN->TabIndex = 12;
 			this->IskvietPrevBTN->Text = L"<----";
 			this->IskvietPrevBTN->UseVisualStyleBackColor = true;
 			this->IskvietPrevBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietPrevBTN_Click);
@@ -388,7 +412,7 @@ namespace Baigiamas {
 			this->IskvietNextBTN->Location = System::Drawing::Point(91, 474);
 			this->IskvietNextBTN->Name = L"IskvietNextBTN";
 			this->IskvietNextBTN->Size = System::Drawing::Size(75, 23);
-			this->IskvietNextBTN->TabIndex = 14;
+			this->IskvietNextBTN->TabIndex = 13;
 			this->IskvietNextBTN->Text = L"---->";
 			this->IskvietNextBTN->UseVisualStyleBackColor = true;
 			this->IskvietNextBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietNextBTN_Click);
@@ -398,7 +422,7 @@ namespace Baigiamas {
 			this->IskvietNewBTN->Location = System::Drawing::Point(172, 474);
 			this->IskvietNewBTN->Name = L"IskvietNewBTN";
 			this->IskvietNewBTN->Size = System::Drawing::Size(83, 23);
-			this->IskvietNewBTN->TabIndex = 15;
+			this->IskvietNewBTN->TabIndex = 14;
 			this->IskvietNewBTN->Text = L"Naujas";
 			this->IskvietNewBTN->UseVisualStyleBackColor = true;
 			this->IskvietNewBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietNewBTN_Click);
@@ -408,7 +432,7 @@ namespace Baigiamas {
 			this->IskvietEditBTN->Location = System::Drawing::Point(261, 474);
 			this->IskvietEditBTN->Name = L"IskvietEditBTN";
 			this->IskvietEditBTN->Size = System::Drawing::Size(75, 23);
-			this->IskvietEditBTN->TabIndex = 16;
+			this->IskvietEditBTN->TabIndex = 15;
 			this->IskvietEditBTN->Text = L"Redaguoti";
 			this->IskvietEditBTN->UseVisualStyleBackColor = true;
 			this->IskvietEditBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietEditBTN_Click);
@@ -418,7 +442,7 @@ namespace Baigiamas {
 			this->IskvietDeleteBTN->Location = System::Drawing::Point(342, 474);
 			this->IskvietDeleteBTN->Name = L"IskvietDeleteBTN";
 			this->IskvietDeleteBTN->Size = System::Drawing::Size(75, 23);
-			this->IskvietDeleteBTN->TabIndex = 17;
+			this->IskvietDeleteBTN->TabIndex = 16;
 			this->IskvietDeleteBTN->Text = L"Trinti";
 			this->IskvietDeleteBTN->UseVisualStyleBackColor = true;
 			this->IskvietDeleteBTN->Click += gcnew System::EventHandler(this, &kvietimai::IskvietDeleteBTN_Click);
@@ -483,7 +507,7 @@ namespace Baigiamas {
 			this->IskvietNewSaveBTN->Location = System::Drawing::Point(172, 474);
 			this->IskvietNewSaveBTN->Name = L"IskvietNewSaveBTN";
 			this->IskvietNewSaveBTN->Size = System::Drawing::Size(83, 23);
-			this->IskvietNewSaveBTN->TabIndex = 23;
+			this->IskvietNewSaveBTN->TabIndex = 14;
 			this->IskvietNewSaveBTN->Text = L"Iðsaugoti";
 			this->IskvietNewSaveBTN->UseVisualStyleBackColor = true;
 			this->IskvietNewSaveBTN->Visible = false;
@@ -508,6 +532,8 @@ namespace Baigiamas {
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Name = L"kvietimai";
+			this->ShowIcon = false;
+			this->ShowInTaskbar = false;
 			this->Text = L"kvietimai";
 			this->Load += gcnew System::EventHandler(this, &kvietimai::kvietimai_Load);
 			this->groupBox1->ResumeLayout(false);
@@ -518,9 +544,9 @@ namespace Baigiamas {
 			this->PerformLayout();
 
 		}
-		void remontaiLangUpdate() {
+		void remontaiLangUpdate() { // Funkcija naudojama atnaujinti duomenims, pakeitus rodomà iðkvietimà.
 			if (aparatuSarasas[aparataiCID].aparatRemontai.size() != 0) {
-				IskvietDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_data);
+				IskvietDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].data);
 				iskvietAprasymasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_aprasymas);
 				IskvietLaikasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_laikas);
 				IskvietPaskirtaTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_paskyrimas);
@@ -550,16 +576,28 @@ namespace Baigiamas {
 	private: System::Void kvietimai_Load(System::Object^  sender, System::EventArgs^  e) {
 		remontaiLangUpdate();
 	}
+				//Mygtukai keièiantys rodomus duomenis
 private: System::Void IskvietPrevBTN_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (remontaiCID > 0)
+	if (remontaiCID > 0) {
 		remontaiCID--;
+		if (aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta)
+			tempAtlikt = true;
+		else
+			tempAtlikt = false;
+	}
 	remontaiLangUpdate();
 }
 private: System::Void IskvietNextBTN_Click(System::Object^  sender, System::EventArgs^  e) {
-	if (remontaiCID + 1 < aparatuSarasas[aparataiCID].aparatRemontai.size())
+	if (remontaiCID + 1 < aparatuSarasas[aparataiCID].aparatRemontai.size()) {
 		remontaiCID++;
+		if (aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta)
+			tempAtlikt = true;
+		else
+			tempAtlikt = false;
+	}
 	remontaiLangUpdate();
 }
+		 //Mygtukai sukuriantys, redaguojantys bei trinantys iðkvietimo áraðus.
 private: System::Void IskvietNewBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	remontai temp = {};
 	aparatuSarasas[aparataiCID].aparatRemontai.push_back(temp);
@@ -567,24 +605,26 @@ private: System::Void IskvietNewBTN_Click(System::Object^  sender, System::Event
 	remontaiLangUpdate();
 	AtlikStatusBTN->Enabled = true;
 	iskvietAprasymasTB->ReadOnly = false;
-	IskvietDataTB->ReadOnly = false;
+	IskvietDataTB->Visible = false;
 	IskvietLaikasTB->ReadOnly = false;
 	IskvietPaskirtaTB->ReadOnly = false;
 	IskvietTelefonaiTB->ReadOnly = false;
 	IskvietVardTB->ReadOnly = false;
 	AtlikAprasymasTB->ReadOnly = false;
-	AtlikDataTB->ReadOnly = false;
 	AtlikLaikasTB->ReadOnly = false;
 	AtlikMeistrasTB->ReadOnly = false;
 	AtlikPastabosTB->ReadOnly = false;
 	AtlikStatusBTN->Enabled = true;
 	IskvietNewBTN->Visible = false;
 	IskvietNewSaveBTN->Visible = true;
+	IskvietDataDTP->Visible = true;
+	AtlikDataDTP->Visible = true;
+	AtlikDataTB->Visible = false;
 }
 private: System::Void IskvietEditBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	AtlikStatusBTN->Enabled = true;
 	iskvietAprasymasTB->ReadOnly = false;
-	IskvietDataTB->ReadOnly = false;
+	IskvietDataTB->Visible = false;
 	IskvietLaikasTB->ReadOnly = false;
 	IskvietPaskirtaTB->ReadOnly = false;
 	IskvietTelefonaiTB->ReadOnly = false;
@@ -597,6 +637,9 @@ private: System::Void IskvietEditBTN_Click(System::Object^  sender, System::Even
 	AtlikStatusBTN->Enabled = true;
 	IskvietEditBTN->Visible = false;
 	IskvietEditSaveBTN->Visible = true;
+	IskvietDataDTP->Visible = true;
+	AtlikDataDTP->Visible = true;
+	AtlikDataTB->Visible = false;
 }
 private: System::Void IskvietDeleteBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	IskvietDeleteBTN->Visible = false;
@@ -605,7 +648,7 @@ private: System::Void IskvietDeleteBTN_Click(System::Object^  sender, System::Ev
 }
 private: System::Void IskvietNewSaveBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_aprasymas = stringConvert(iskvietAprasymasTB->Text);
-	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_data = stringConvert(IskvietDataTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].data = stringConvert(IskvietDataDTP->Value.ToString("dd/MM/yyyy"));
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_kvietejas = stringConvert(IskvietVardTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_laikas = stringConvert(IskvietLaikasTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].I_paskyrimas = stringConvert(IskvietPaskirtaTB->Text);
@@ -615,12 +658,11 @@ private: System::Void IskvietNewSaveBTN_Click(System::Object^  sender, System::E
 	else
 		aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].atlikta = false;
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_aprasymas = stringConvert(AtlikAprasymasTB->Text);
-	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_data = stringConvert(AtlikDataTB->Text);
+	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_data = stringConvert(AtlikDataDTP->Value.ToString("dd/MM/yyyy"));
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_laikas = stringConvert(AtlikLaikasTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_meistras = stringConvert(AtlikMeistrasTB->Text);
 	aparatuSarasas[aparataiCID].aparatRemontai[remontaiCID].A_pastabos = stringConvert(AtlikPastabosTB->Text);
 	iskvietAprasymasTB->ReadOnly = true;
-	IskvietDataTB->ReadOnly = true;
 	IskvietLaikasTB->ReadOnly = true;
 	IskvietPaskirtaTB->ReadOnly = true;
 	IskvietVardTB->ReadOnly = true;
@@ -633,15 +675,22 @@ private: System::Void IskvietNewSaveBTN_Click(System::Object^  sender, System::E
 	IskvietNewSaveBTN->Visible = false;
 	IskvietNewBTN->Visible = true;
 	AtlikStatusBTN->Enabled = false;
+	IskvietDataTB->Visible = true;
+	AtlikDataTB->Visible = true;
+	AtlikDataDTP->Visible = false;
+	IskvietDataDTP->Visible = false;
 	remontaiLangUpdate();
 }
+		 // Funkcija kontroliuojanti Atlikimo statuso mygtukà.
 private: System::Void AtlikStatusBTN_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (AtlikStatusBTN->BackColor == System::Drawing::Color::ForestGreen) {
 		AtlikStatusBTN->BackColor = System::Drawing::Color::Red;
+		AtlikStatusBTN->Text = L"Ne";
 		tempAtlikt = false;
 	}
 	else {
 		AtlikStatusBTN->BackColor = System::Drawing::Color::ForestGreen;
+		AtlikStatusBTN->Text = L"Taip";
 		tempAtlikt = true;
 	}
 }

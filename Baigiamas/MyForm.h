@@ -2,16 +2,17 @@
 #include "krovimas.h"
 #include "convert.h"
 #include "kvietimai.h"
+#include <algorithm>
 
-extern std::vector<aparatas> aparatuSarasas;
-extern std::vector<std::string> aparataiCombo;
-int aparataiCID = 0;
+extern std::vector<aparatas> aparatuSarasas; // Pasiekiamas vectorius esantis kitame faile
+int aparataiCID = 0; //Dabar pasirinktø duomenø ID
 int sutartysCID = 0;
 int irasaiCID = 0;
 void aparataiLangUpdate();
 void sutartysLangUpdate();
 void irasaiLangUpdate();
-void saveButtonRed();
+bool closeCheck();
+
 
 namespace Baigiamas {
 
@@ -21,6 +22,7 @@ namespace Baigiamas {
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
 	using namespace System::Drawing;
+
 
 	/// <summary>
 	/// Summary for MyForm
@@ -123,8 +125,19 @@ namespace Baigiamas {
 	private: System::Windows::Forms::Button^  AparatasDeleteCNButton;
 	private: System::Windows::Forms::Button^  IrasasDeleteCNButton;
 	private: System::Windows::Forms::Button^  SutartisDeleteCNButton;
-	private: System::Windows::Forms::ComboBox^  AparatasModelisCMB;
+
 	private: System::Windows::Forms::TextBox^  AparatoModelisTextBox;
+	private: System::Windows::Forms::DateTimePicker^  IrasoDataDTP;
+	private: System::Windows::Forms::DateTimePicker^  SutartisIkiDTP;
+	private: System::Windows::Forms::DateTimePicker^  SutartisNuoDTP;
+
+
+private: System::Windows::Forms::Button^  ataskaitaBTN;
+private: System::Windows::Forms::PictureBox^  pictureBox1;
+private: System::Windows::Forms::Button^  PicCloseButton;
+
+
+
 
 
 	private:
@@ -142,7 +155,6 @@ namespace Baigiamas {
 		{
 			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->TechPasoInfo = (gcnew System::Windows::Forms::GroupBox());
-			this->AparatasModelisCMB = (gcnew System::Windows::Forms::ComboBox());
 			this->AparatasNextButton = (gcnew System::Windows::Forms::Button());
 			this->AparatasPrevButton = (gcnew System::Windows::Forms::Button());
 			this->AparatoKorpNrTextBox = (gcnew System::Windows::Forms::TextBox());
@@ -154,6 +166,8 @@ namespace Baigiamas {
 			this->SerijaLabel = (gcnew System::Windows::Forms::Label());
 			this->AparatoSerijaTextBox = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->SutartisIkiDTP = (gcnew System::Windows::Forms::DateTimePicker());
+			this->SutartisNuoDTP = (gcnew System::Windows::Forms::DateTimePicker());
 			this->SutartisNextButton = (gcnew System::Windows::Forms::Button());
 			this->SutartisPrevButton = (gcnew System::Windows::Forms::Button());
 			this->SutartisIkiTB = (gcnew System::Windows::Forms::TextBox());
@@ -165,6 +179,7 @@ namespace Baigiamas {
 			this->SutartisNumerisLabel = (gcnew System::Windows::Forms::Label());
 			this->SutartisNrTB = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->IrasoDataDTP = (gcnew System::Windows::Forms::DateTimePicker());
 			this->IrasaiNextButton = (gcnew System::Windows::Forms::Button());
 			this->IrasaiPrevButton = (gcnew System::Windows::Forms::Button());
 			this->IrasaiMeistrasTB = (gcnew System::Windows::Forms::TextBox());
@@ -206,14 +221,17 @@ namespace Baigiamas {
 			this->AparatasDeleteCNButton = (gcnew System::Windows::Forms::Button());
 			this->IrasasDeleteCNButton = (gcnew System::Windows::Forms::Button());
 			this->SutartisDeleteCNButton = (gcnew System::Windows::Forms::Button());
+			this->ataskaitaBTN = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->PicCloseButton = (gcnew System::Windows::Forms::Button());
 			this->TechPasoInfo->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// TechPasoInfo
 			// 
-			this->TechPasoInfo->Controls->Add(this->AparatasModelisCMB);
 			this->TechPasoInfo->Controls->Add(this->AparatasNextButton);
 			this->TechPasoInfo->Controls->Add(this->AparatasPrevButton);
 			this->TechPasoInfo->Controls->Add(this->AparatoKorpNrTextBox);
@@ -227,11 +245,6 @@ namespace Baigiamas {
 			resources->ApplyResources(this->TechPasoInfo, L"TechPasoInfo");
 			this->TechPasoInfo->Name = L"TechPasoInfo";
 			this->TechPasoInfo->TabStop = false;
-			// 
-			// AparatasModelisCMB
-			// 
-			resources->ApplyResources(this->AparatasModelisCMB, L"AparatasModelisCMB");
-			this->AparatasModelisCMB->Name = L"AparatasModelisCMB";
 			// 
 			// AparatasNextButton
 			// 
@@ -293,6 +306,8 @@ namespace Baigiamas {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->SutartisIkiDTP);
+			this->groupBox1->Controls->Add(this->SutartisNuoDTP);
 			this->groupBox1->Controls->Add(this->SutartisNextButton);
 			this->groupBox1->Controls->Add(this->SutartisPrevButton);
 			this->groupBox1->Controls->Add(this->SutartisIkiTB);
@@ -306,6 +321,20 @@ namespace Baigiamas {
 			resources->ApplyResources(this->groupBox1, L"groupBox1");
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->TabStop = false;
+			// 
+			// SutartisIkiDTP
+			// 
+			resources->ApplyResources(this->SutartisIkiDTP, L"SutartisIkiDTP");
+			this->SutartisIkiDTP->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->SutartisIkiDTP->Name = L"SutartisIkiDTP";
+			this->SutartisIkiDTP->Value = System::DateTime(2016, 4, 24, 13, 6, 19, 0);
+			// 
+			// SutartisNuoDTP
+			// 
+			resources->ApplyResources(this->SutartisNuoDTP, L"SutartisNuoDTP");
+			this->SutartisNuoDTP->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->SutartisNuoDTP->Name = L"SutartisNuoDTP";
+			this->SutartisNuoDTP->Value = System::DateTime(2016, 4, 24, 13, 6, 19, 0);
 			// 
 			// SutartisNextButton
 			// 
@@ -367,6 +396,7 @@ namespace Baigiamas {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->Controls->Add(this->IrasoDataDTP);
 			this->groupBox2->Controls->Add(this->IrasaiNextButton);
 			this->groupBox2->Controls->Add(this->IrasaiPrevButton);
 			this->groupBox2->Controls->Add(this->IrasaiMeistrasTB);
@@ -388,6 +418,13 @@ namespace Baigiamas {
 			resources->ApplyResources(this->groupBox2, L"groupBox2");
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->TabStop = false;
+			// 
+			// IrasoDataDTP
+			// 
+			resources->ApplyResources(this->IrasoDataDTP, L"IrasoDataDTP");
+			this->IrasoDataDTP->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
+			this->IrasoDataDTP->Name = L"IrasoDataDTP";
+			this->IrasoDataDTP->Value = System::DateTime(2016, 4, 24, 13, 6, 19, 0);
 			// 
 			// IrasaiNextButton
 			// 
@@ -666,11 +703,34 @@ namespace Baigiamas {
 			this->SutartisDeleteCNButton->UseVisualStyleBackColor = false;
 			this->SutartisDeleteCNButton->Click += gcnew System::EventHandler(this, &MyForm::SutartisDeleteCNButton_Click);
 			// 
+			// ataskaitaBTN
+			// 
+			resources->ApplyResources(this->ataskaitaBTN, L"ataskaitaBTN");
+			this->ataskaitaBTN->Name = L"ataskaitaBTN";
+			this->ataskaitaBTN->UseVisualStyleBackColor = true;
+			this->ataskaitaBTN->Click += gcnew System::EventHandler(this, &MyForm::ataskaitaBTN_Click);
+			// 
+			// pictureBox1
+			// 
+			resources->ApplyResources(this->pictureBox1, L"pictureBox1");
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->TabStop = false;
+			// 
+			// PicCloseButton
+			// 
+			resources->ApplyResources(this->PicCloseButton, L"PicCloseButton");
+			this->PicCloseButton->Name = L"PicCloseButton";
+			this->PicCloseButton->UseVisualStyleBackColor = true;
+			this->PicCloseButton->Click += gcnew System::EventHandler(this, &MyForm::PicCloseButton_Click);
+			// 
 			// MyForm
 			// 
 			this->AllowDrop = true;
 			resources->ApplyResources(this, L"$this");
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->PicCloseButton);
+			this->Controls->Add(this->pictureBox1);
+			this->Controls->Add(this->ataskaitaBTN);
 			this->Controls->Add(this->SutartisDeleteCNButton);
 			this->Controls->Add(this->IrasasDeleteCNButton);
 			this->Controls->Add(this->AparatasDeleteCNButton);
@@ -698,6 +758,8 @@ namespace Baigiamas {
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->TechPasoInfo);
 			this->Name = L"MyForm";
+			this->ShowIcon = false;
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyForm::MyForm_FormClosing);
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
 			this->TechPasoInfo->ResumeLayout(false);
 			this->TechPasoInfo->PerformLayout();
@@ -705,11 +767,19 @@ namespace Baigiamas {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
-		void aparataiLangUpdate() {
-			sutartysCID = 0;
+		bool closeCheck() {
+			 String ^ confirmResult =  Convert::ToString(MessageBox::Show("Ar norite iðsaugoti pakeitimus prieð uþdarant programà?", "Iðëjimas",  MessageBoxButtons::YesNo, MessageBoxIcon::Question));
+			 if (confirmResult == "Yes")
+				 return true;
+			 else
+				 return false;
+		}
+		void aparataiLangUpdate() { // Funkcija naudojama atnaujinti duomenims pakeitus rodomà aparatà
+			sutartysCID = 0; 
 			irasaiCID = 0;
 			AparatoSerijaTextBox->Text = stringConvert(aparatuSarasas[aparataiCID].serija);
 			AparatoNrTextBox->Text = stringConvert(aparatuSarasas[aparataiCID].nr);
@@ -717,7 +787,7 @@ namespace Baigiamas {
 			AparatoModelisTextBox->Text = stringConvert(aparatuSarasas[aparataiCID].modelis);
 			if (aparatuSarasas[aparataiCID].aparatSutartys.size() > 0) {
 				SutartisNrTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].numeris);
-				SutartisNuoTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].nuo);
+				SutartisNuoTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].data);
 				SutartisIkiTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki);
 				SutartisTipasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].tipas);
 			} else {
@@ -746,7 +816,7 @@ namespace Baigiamas {
 				IrasaiMeistrasTB->Text = L"";
 			}
 		}
-		void irasaiLangUpdate() {
+		void irasaiLangUpdate() { //Funkcija naudojama atnaujinti duomenims pakeitus rodomà áraðà
 			IrasaiDataTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data);
 			IrasaiSavininkasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].savininkas);
 			IrasaiPagrindasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].pagrindas);
@@ -756,21 +826,15 @@ namespace Baigiamas {
 			IrasaiNumerisTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].nr);
 			IrasaiMeistrasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].meistras);
 		}
-		void sutartysLangUpdate() {
+		void sutartysLangUpdate() { // Funkcija naudojama atnaujinti duomenims pakeitus rodomà sutartá
 			SutartisNrTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].numeris);
-			SutartisNuoTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].nuo);
+			SutartisNuoTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].data);
 			SutartisIkiTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki);
 			SutartisTipasTB->Text = stringConvert(aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].tipas);
 		}
-		void saveButtonRed() {
-			MainSaveButton->BackColor = System::Drawing::Color::Red;
-		}
+
 #pragma endregion
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-	ikrovimas();
-	aparataiLangUpdate();
-	saugojimas();
-}
+		// Mygtukai keièiantys rodomus duomenis. Naudojama kontrolë neleidþianti iðeiti ið sàraðo ribø.
 private: System::Void AparatasPrevButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	if (aparataiCID > 0) {
 		aparataiCID--;
@@ -808,6 +872,7 @@ private: System::Void IrasaiNextButton_Click(System::Object^  sender, System::Ev
 		irasaiLangUpdate();
 	}
 }
+		 // Funkcijos skirtos ádëti naujiems duomenims
 private: System::Void AparatasNewButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	aparatas temp = {};
 	aparatuSarasas.push_back(temp);
@@ -818,8 +883,7 @@ private: System::Void AparatasNewButton_Click(System::Object^  sender, System::E
 	AparatoNrTextBox->ReadOnly = false;
 	AparatasNewButton->Visible = false;
 	AparatasSaveButton->Visible = true;
-	AparatoModelisTextBox->Visible = false;
-	AparatasModelisCMB->Visible = true;
+	AparatoModelisTextBox->ReadOnly = false;
 			 
 }
 private: System::Void AparatasSaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -827,23 +891,11 @@ private: System::Void AparatasSaveButton_Click(System::Object^  sender, System::
 	aparatuSarasas[aparataiCID].ID = stringConvert(AparatoKorpNrTextBox->Text);
 	aparatuSarasas[aparataiCID].serija = stringConvert(AparatoSerijaTextBox->Text);
 	aparatuSarasas[aparataiCID].nr = stringConvert(AparatoNrTextBox->Text);
-	aparatuSarasas[aparataiCID].modelis = stringConvert(AparatasModelisCMB->Text);
-	for (int i = 0; i < aparataiCombo.size(); i++) {
-		if (AparatasModelisCMB->Text == stringConvert(aparataiCombo[i])) {
-			naujas = false;
-			break;
-		}	
-	}
-	if (naujas) {
-		AparatasModelisCMB->Items->Add(AparatasModelisCMB->Text);
-		aparataiCombo.push_back(stringConvert(AparatasModelisCMB->Text));
-	}
 	AparatoKorpNrTextBox->ReadOnly = true;
 	AparatoSerijaTextBox->ReadOnly = true;
 	AparatoNrTextBox->ReadOnly = true;
 	aparataiLangUpdate();
-	AparatasModelisCMB->Visible = false;
-	AparatoModelisTextBox->Visible = true;
+	AparatoModelisTextBox->ReadOnly = true;
 	AparatasNewButton->Visible = true;
 	AparatasSaveButton->Visible = false;
 	MainSaveButton->BackColor = System::Drawing::Color::Red;
@@ -851,8 +903,8 @@ private: System::Void AparatasSaveButton_Click(System::Object^  sender, System::
 private: System::Void SutartisSaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].numeris = stringConvert(SutartisNrTB->Text);
 	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].tipas = stringConvert(SutartisTipasTB->Text);
-	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].nuo = stringConvert(SutartisNuoTB->Text);
-	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki = stringConvert(SutartisIkiTB->Text);
+	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(SutartisNuoDTP->Value.ToString("dd/MM/yyyy"));
+	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(SutartisIkiDTP->Value.ToString("dd/MM/yyyy"));
 	SutartisNrTB->ReadOnly = true;
 	SutartisTipasTB->ReadOnly = true;
 	SutartisNuoTB->ReadOnly = true;
@@ -860,6 +912,10 @@ private: System::Void SutartisSaveButton_Click(System::Object^  sender, System::
 	sutartysLangUpdate();
 	SutartisNewButton->Visible = true;
 	SutartisSaveButton->Visible = false;
+	SutartisNuoTB->Visible = true;
+	SutartisIkiTB->Visible = true;
+	SutartisNuoDTP->Visible = false;
+	SutartisIkiDTP->Visible = false;
 	MainSaveButton->BackColor = System::Drawing::Color::Red;
 }
 private: System::Void SutartisNewButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -873,6 +929,10 @@ private: System::Void SutartisNewButton_Click(System::Object^  sender, System::E
 	SutartisIkiTB->ReadOnly = false;
 	SutartisNewButton->Visible = false;
 	SutartisSaveButton->Visible = true;
+	SutartisNuoTB->Visible = false;
+	SutartisIkiTB->Visible = false;
+	SutartisNuoDTP->Visible = true;
+	SutartisIkiDTP->Visible = true;
 }
 
 private: System::Void IrasasNewButton_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -890,9 +950,11 @@ private: System::Void IrasasNewButton_Click(System::Object^  sender, System::Eve
 	IrasaiTelefonaiTB->ReadOnly = false;
 	IrasasNewButton->Visible = false;
 	IrasaiSaveButton->Visible = true;
+	IrasaiDataTB->Visible = false;
+	IrasoDataDTP->Visible = true;
 }
 private: System::Void IrasaiSaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(IrasaiDataTB->Text);
+	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(IrasoDataDTP->Value.ToString("dd/MM/yyyy"));
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].gatve = stringConvert(IrasaiGatveTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].meistras = stringConvert(IrasaiMeistrasTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].miestas = stringConvert(IrasaiMiestasTB->Text);
@@ -911,9 +973,12 @@ private: System::Void IrasaiSaveButton_Click(System::Object^  sender, System::Ev
 	irasaiLangUpdate();
 	IrasasNewButton->Visible = true;
 	IrasaiSaveButton->Visible = false;
-	MainSaveButton->BackColor = System::Drawing::Color::Red;
+	IrasaiDataTB->Visible = true;
+	IrasoDataDTP->Visible = false;
+	MainSaveButton->BackColor = System::Drawing::Color::Red; //Padarius bet koká pakeitimà. "Iðsaugoti" mygtukas nudaþomas raudonai
 		 
 }
+		 // Funkcijos skirtos redaguoti duomenims.
 private: System::Void AparatasEditButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	AparatoKorpNrTextBox->ReadOnly = false;
 	AparatoSerijaTextBox->ReadOnly = false;
@@ -939,27 +1004,31 @@ private: System::Void AparatasESaveButton_Click(System::Object^  sender, System:
 private: System::Void SutartisEditButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	SutartisNrTB->ReadOnly = false;
 	SutartisTipasTB->ReadOnly = false;
-	SutartisNuoTB->ReadOnly = false;
-	SutartisIkiTB->ReadOnly = false;
+	SutartisNuoTB->Visible = false;
+	SutartisIkiTB->Visible = false;
 	SutartisEditButton->Visible = false;
 	SutartisESaveButton->Visible = true;	
+	SutartisNuoDTP->Visible = true;
+	SutartisIkiDTP->Visible = true;
 }
 private: System::Void SutartisESaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].numeris = stringConvert(SutartisNrTB->Text);
 	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].tipas = stringConvert(SutartisTipasTB->Text);
-	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].nuo = stringConvert(SutartisNuoTB->Text);
-	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki = stringConvert(SutartisIkiTB->Text);
+	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].data = stringConvert(SutartisNuoDTP->Value.ToString("dd/MM/yyyy"));
+	aparatuSarasas[aparataiCID].aparatSutartys[sutartysCID].iki = stringConvert(SutartisIkiDTP->Value.ToString("dd/MM/yyyy"));
 	SutartisNrTB->ReadOnly = true;
 	SutartisTipasTB->ReadOnly = true;
-	SutartisNuoTB->ReadOnly = true;
-	SutartisIkiTB->ReadOnly = true;
+	SutartisNuoTB->Visible = true;
+	SutartisIkiTB->Visible = true;
 	sutartysLangUpdate();
 	SutartisEditButton->Visible = true;
 	SutartisESaveButton->Visible = false;	
+	SutartisNuoDTP->Visible = false;
+	SutartisIkiDTP->Visible = false;
 	MainSaveButton->BackColor = System::Drawing::Color::Red;
 }
 private: System::Void IrasasEditButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	IrasaiDataTB->ReadOnly = false;
+	IrasaiDataTB->Visible = false;
 	IrasaiGatveTB->ReadOnly = false;
 	IrasaiMeistrasTB->ReadOnly = false;
 	IrasaiMiestasTB->ReadOnly = false;
@@ -969,10 +1038,11 @@ private: System::Void IrasasEditButton_Click(System::Object^  sender, System::Ev
 	IrasaiTelefonaiTB->ReadOnly = false;
 	IrasasEditButton->Visible = false;
 	IrasasESaveButton->Visible = true;
+	IrasoDataDTP->Visible = true;
 
 }
 private: System::Void IrasasESaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
-	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(IrasaiDataTB->Text);
+	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].data = stringConvert(IrasoDataDTP->Value.ToString("dd/MM/yyyy"));
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].gatve = stringConvert(IrasaiGatveTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].meistras = stringConvert(IrasaiMeistrasTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].miestas = stringConvert(IrasaiMiestasTB->Text);
@@ -980,7 +1050,7 @@ private: System::Void IrasasESaveButton_Click(System::Object^  sender, System::E
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].pagrindas = stringConvert(IrasaiPagrindasTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].savininkas = stringConvert(IrasaiSavininkasTB->Text);
 	aparatuSarasas[aparataiCID].aparatIrasai[irasaiCID].telefonai = stringConvert(IrasaiTelefonaiTB->Text);
-	IrasaiDataTB->ReadOnly = true;
+	IrasaiDataTB->Visible = true;
 	IrasaiGatveTB->ReadOnly = true;
 	IrasaiMeistrasTB->ReadOnly = true;
 	IrasaiMiestasTB->ReadOnly = true;
@@ -991,12 +1061,15 @@ private: System::Void IrasasESaveButton_Click(System::Object^  sender, System::E
 	irasaiLangUpdate();
 	IrasasEditButton->Visible = true;
 	IrasasESaveButton->Visible = false;
+	IrasoDataDTP->Visible = false;
 	MainSaveButton->BackColor = System::Drawing::Color::Red;
 }
+		 // Funkcija iðsauganti pakeitimus á failà
 private: System::Void MainSaveButton_Click(System::Object^  sender, System::EventArgs^  e) {
 	saugojimas();
-	MainSaveButton->BackColor = System::Drawing::Color::ForestGreen;
+	MainSaveButton->BackColor = System::Drawing::Color::ForestGreen; // Iðsaugojus pakeitimus, mygtuko spalva pakeièiama á þalià.
 }
+		 //Funkcijos skirtos iðtrinti duomenims
 private: System::Void AparatasDeleteButton_Click(System::Object^  sender, System::EventArgs^  e) {
 			 AparatasDeleteButton->Visible = false;
 			 AparatasDeleteCYButton->Visible = true;
@@ -1012,6 +1085,7 @@ private: System::Void IrasasDeleteButton_Click(System::Object^  sender, System::
 			 IrasasDeleteCNButton->Visible = true;
 			 IrasasDeleteCYButton->Visible = true;
 		 }
+		 // Paspaudus trynimo mygtukus, praðoma patvirtinti pasirinkimà.
 private: System::Void AparatasDeleteCYButton_Click(System::Object^  sender, System::EventArgs^  e) {
 			 aparatuSarasas.erase(aparatuSarasas.begin() + aparataiCID);
 			 aparataiCID = 0;
@@ -1056,14 +1130,33 @@ private: System::Void IrasasDeleteCNButton_Click(System::Object^  sender, System
 		 }
 private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
 	ikrovimas();
-	for (int i = 0; i < aparataiCombo.size(); i++) {
-		AparatasModelisCMB->Items->Add(stringConvert(aparataiCombo[i]));
+	for (int i = 0; i < aparatuSarasas.size(); i++) {
+		// Ájungus programà, pagal datà surikiuojami visi duomenø saraðai. Tam naudojama specialai sukurta DateSort funkcija.
+		std::sort(aparatuSarasas[i].aparatIrasai.begin(), aparatuSarasas[i].aparatIrasai.end(), dateSort<irasas>);      
+		std::sort(aparatuSarasas[i].aparatRemontai.begin(), aparatuSarasas[i].aparatRemontai.end(), dateSort<remontai>);
+		std::sort(aparatuSarasas[i].aparatSutartys.begin(), aparatuSarasas[i].aparatSutartys.end(), dateSort<sutartis>);
 	}
 	aparataiLangUpdate();
 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+	// Paspaudus "Iðkvietimai" mygtukà, atidaromas Kvietimai.h langas.
 	kvietimai^ kviet = gcnew kvietimai();
 	kviet->ShowDialog();
+}
+
+private: System::Void MyForm_FormClosing(System::Object^  sender, System::Windows::Forms::FormClosingEventArgs^  e) {
+	//Uþsidarant programai, dël bet kokios prieþasties, naudotojo paklausiama ar jis nori iðsaugoti pakeitimus.
+	String ^ confirmResult =  Convert::ToString(MessageBox::Show("Ar norite iðsaugoti pakeitimus prieð uþdarant programà?", "Iðëjimas",  MessageBoxButtons::YesNo, MessageBoxIcon::Question));
+	if (confirmResult == "Yes")
+		saugojimas();
+	exit(0);
+}
+private: System::Void ataskaitaBTN_Click(System::Object^  sender, System::EventArgs^  e) {
+	rezultatai();
+}
+private: System::Void PicCloseButton_Click(System::Object^  sender, System::EventArgs^  e) {
+	PicCloseButton->Visible = false;
+	pictureBox1->Visible = false;
 }
 };
 }

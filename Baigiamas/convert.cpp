@@ -1,7 +1,8 @@
 #include "convert.h"
 
 std::string stringConvert(System::String ^ x) {
-	return msclr::interop::marshal_as< std::string >(x);;
+	msclr::interop::marshal_context context;
+	return context.marshal_as<std::string>(x);
 }
 
 System::String ^ stringConvert(std::string x) {

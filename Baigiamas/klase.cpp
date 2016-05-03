@@ -1,69 +1,64 @@
 #include "klase.h"
-
 extern std::vector<aparatas> aparatuSarasas;
 
-void aparatas::irasasNaujas(std::string savininkas, std::string data, std::string meistras, std::string pagrindas, std::string miestas, std::string gatve, std::string nr, std::string telefonai) {
-	irasas temp = {savininkas, data, meistras, pagrindas, miestas, gatve, nr, telefonai};
-	aparatIrasai.push_back(temp);
+void rezultatai() { //funkcija iðraðanti rezultatø failà
+	std::string dabLaikas = stringConvert(System::DateTime::Today.ToString("dd/MM/yyyy")); // Gaunam ðiandienos laikà
+	std::string minLaikas = stringConvert(System::DateTime::Today.AddDays(-30).ToString("dd/MM/yyyy")); // Gaunam datà prieð 30 dienø.
+	int dDab, mDab, yDab, dMin, mMin, yMin; // Kintamieji laikyti dabartinëms bei minimalioms datoms
+	int remontSkaic = 0;
+	int sutartSkaic = 0;
+	int iraSkaic = 0;
+	int aRemontSkaic = 0;
+	dDab = stoi(dabLaikas.substr(0, 2)); dMin = stoi(minLaikas.substr(0, 2));
+	mDab = stoi(dabLaikas.substr(3, 2)); mMin = stoi(minLaikas.substr(3, 2));
+	yDab = stoi(dabLaikas.substr(6, 4)); yMin = stoi(minLaikas.substr(6, 4));
+	for (int i = 0; i < aparatuSarasas.size(); i++) {
+		for (int j = 0; j < aparatuSarasas[i].aparatRemontai.size(); j++) {
+			if (stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(6, 4)) == yDab || stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(6, 4)) == yMin) {
+				if (stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(3, 2)) == mDab || stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(3, 2)) == mMin) {
+					if (stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(0, 2)) <= dDab || stoi(aparatuSarasas[i].aparatRemontai[j].data.substr(0, 2)) >= mMin) {
+						remontSkaic++;
+					}
+				}
+			}
+		}
+		for (int j = 0; j < aparatuSarasas[i].aparatRemontai.size(); j++) {
+			if (aparatuSarasas[i].aparatRemontai[j].atlikta) {
+				if (stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(6, 4)) == yDab || stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(6, 4)) == yMin) {
+					if (stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(3, 2)) == mDab || stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(3, 2)) == mMin) {
+						if (stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(0, 2)) <= dDab || stoi(aparatuSarasas[i].aparatRemontai[j].A_data.substr(0, 2)) >= mMin) {
+							aRemontSkaic++;
+						}
+					}
+				}
+			}
+		}
+		for (int j = 0; j < aparatuSarasas[i].aparatIrasai.size(); j++) {
+			if (stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(6, 4)) == yDab || stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(6, 4)) == yMin) {
+				if (stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(3, 2)) == mDab || stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(3, 2)) == mMin) {
+					if (stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(0, 2)) <= dDab || stoi(aparatuSarasas[i].aparatIrasai[j].data.substr(0, 2)) >= mMin) {
+						iraSkaic++;
+					}
+				}
+			}
+		}
+		for (int j = 0; j < aparatuSarasas[i].aparatSutartys.size(); j++) {
+			if (stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(6, 4)) == yDab || stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(6, 4)) == yMin) {
+				if (stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(3, 2)) == mDab || stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(3, 2)) == mMin) {
+					if (stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(0, 2)) <= dDab || stoi(aparatuSarasas[i].aparatSutartys[j].data.substr(0, 2)) >= mMin) {
+						sutartSkaic++;
+					}
+				}
+			}
+		}
+	}
+	std::ofstream result;
+	result.open("ataskaita.txt");
+	result << "Per paskutines 30 dienø: " << '\n';
+	result << std::setw(20) << "Naujø iðkvietimø: " << "|" << std::setw(5) << remontSkaic << '\n' <<
+		std::setw(20) << "Atliktø iðkvietimø: " << "|" << std::setw(5) << aRemontSkaic << '\n' <<
+		std::setw(20) << "Naujø sutarèiø: " << "|" << std::setw(5) << sutartSkaic << '\n' <<
+		std::setw(20) << "Naujø áraðø: " << "|" << std::setw(5) << iraSkaic << '\n';
 }
 
-void aparatas::sutartisNauja(std::string numeris, std::string tipas, std::string nuo, std::string iki) {
-	sutartis temp = { numeris, tipas, nuo, iki };
-	aparatSutartys.push_back(temp);
-}
 
-void aparatas::aparatasUpdate(std::string serijaN, std::string nrN) {
-	serija = serijaN;
-	nr = nrN;
-}
-
-void aparatas::remontNaujas(std::string I_data, std::string I_laikas, std::string I_aprasymas, std::string I_kvietejas, std::string I_telefonas, std::string I_paskyrimas) {
-	remontai temp = { I_data, I_laikas, I_aprasymas, I_kvietejas, I_telefonas, I_paskyrimas };
-	aparatRemontai.push_back(temp);
-}
-
-void aparatas::remontNaujas(std::string I_data, std::string I_laikas, std::string I_aprasymas, std::string I_kvietejas, std::string I_telefonas, std::string I_paskyrimas, bool atlikta, std::string A_data, std::string A_laikas, std::string A_aprasymas, std::string A_meistras, std::string A_pastabos) {
-	remontai temp = { I_data, I_laikas, I_aprasymas, I_kvietejas, I_telefonas, I_paskyrimas, atlikta, A_data, A_laikas, A_aprasymas, A_meistras, A_pastabos };
-	aparatRemontai.push_back(temp);
-}
-
-void irasas::irasasUpdate(std::string savininkasN, std::string dataN, std::string meistrasN, std::string pagrindasN, std::string miestasN, std::string gatveN, std::string nrN, std::string telefonaiN) {
-	savininkas = savininkasN;
-	data = dataN;
-	meistras = meistrasN;
-	pagrindas = pagrindasN;
-	miestas = miestasN;
-	gatve = gatveN;
-	nr = nrN;
-	telefonai = telefonaiN;
-}
-
-void remontai::remontUpdateKviet(std::string I_data_N, std::string I_laikasN, std::string I_aprasymasN, std::string I_kvietejasN, std::string I_telefonasN, std::string I_paskyrimasN) {
-	I_data = I_data_N;
-	I_laikas = I_laikasN;
-	I_aprasymas = I_aprasymasN;
-	I_kvietejas = I_kvietejasN;
-	I_telefonas = I_telefonasN;
-	I_paskyrimas = I_paskyrimasN;
-}
-
-void remontai::remontUpdateAtlik(bool atliktaN, std::string A_dataN, std::string A_laikasN, std::string A_aprasymasN, std::string A_meistrasN, std::string A_pastabosN) {
-	atlikta = atliktaN;
-	A_data = A_dataN;
-	A_laikas = A_laikasN;
-	A_aprasymas = A_aprasymasN;
-	A_meistras = A_meistrasN;
-	A_pastabos = A_pastabosN;
-}
-
-void sutartis::sutartisUpdate(std::string numerisN, std::string tipasN, std::string nuoN, std::string ikiN) {
-	numeris = numerisN;
-	tipas = tipasN;
-	nuo = nuoN;
-	iki = ikiN;
-}
-
-void aparatNaujas(std::string ID, std::string serija, std::string nr, std::string modelis) {
-	aparatas temp = {ID, serija, nr, modelis};
-	aparatuSarasas.push_back(temp);
-}

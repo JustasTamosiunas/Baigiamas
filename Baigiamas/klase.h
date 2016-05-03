@@ -1,40 +1,58 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <fstream>
+#include <iomanip>
+#include "convert.h"
 
 
-struct remontai {
+class remontai {
+public:
 	//Iğkvietimo info
-	std::string I_data, I_laikas, I_aprasymas, I_kvietejas, I_telefonas, I_paskyrimas;
+	std::string data, I_laikas, I_aprasymas, I_kvietejas, I_telefonas, I_paskyrimas;
 	//Atlikimo info
 	bool atlikta;
 	std::string A_data, A_laikas, A_aprasymas, A_meistras;
 	std::string A_pastabos;
-	void remontUpdateKviet(std::string I_data_N, std::string I_laikasN, std::string I_aprasymasN, std::string I_kvietejasN, std::string I_telefonasN, std::string I_paskyrimasN);
-	void remontUpdateAtlik(bool atlinktaN, std::string A_dataN, std::string A_laikasN, std::string A_aprasymasN, std::string A_meistrasN, std::string A_pastabosN);
 };
-
-struct irasas {
+class irasas {
+public:
 	std::string savininkas, data, meistras, pagrindas, miestas, gatve, nr, telefonai;
-	void irasasUpdate(std::string savininkasN, std::string dataN, std::string meistrasN, std::string pagrindasN, std::string miestasN, std::string gatveN, std::string nrN, std::string telefonaiN);
 };
 
-struct sutartis {
-	std::string numeris, tipas, nuo, iki;
-	void sutartisUpdate(std::string numerisN, std::string tipasN, std::string nuoN, std::string ikiN);
+class sutartis {
+public:
+	std::string numeris, tipas, data, iki;
 };
 
-struct aparatas {
+class aparatas {
+public:
 	std::string ID, serija, nr, modelis;
 	std::vector<irasas> aparatIrasai;
 	std::vector<sutartis> aparatSutartys;
 	std::vector<remontai> aparatRemontai;
-	void remontNaujas(std::string I_data, std::string I_laikas, std::string I_aprasymas, std::string I_kvietejas, std::string I_telefonas, std::string I_paskyrimas);
-	void remontNaujas(std::string I_data, std::string I_laikas, std::string I_aprasymas, std::string I_kvietejas, std::string I_telefonas, std::string I_paskyrimas, bool atlikta, std::string A_data, std::string A_laikas, std::string A_aprasymas, std::string A_meistras, std::string A_pastabos);
-	void irasasNaujas(std::string savininkas, std::string data, std::string meistras, std::string pagrindas, std::string miestas, std::string gatve, std::string nr, std::string telefonai);
-	void sutartisNauja(std::string numeris, std::string tipas, std::string nuo, std::string iki);
-	void aparatasUpdate(std::string serijaN, std::string nrN);
-};
 
-void aparatNaujas(std::string ID, std::string serija, std::string nr, std::string modelis);
+};
+void rezultatai();
+
+template <typename T> // Sukuriamas template, pagal kurá galima rikiuoti ávairiø klasiu sàrağus
+bool dateSort(const T one, const T two) {
+	int y1, m1, d1, y2, m2, d2;
+	d1 = std::stoi(one.data.substr(0, 2)); // Abiejø objektø datos suskirstomos á metus, mënesius bei dienas.
+	m1 = std::stoi(one.data.substr(3, 2));
+	y1 = std::stoi(one.data.substr(6, 4));
+	d2 = std::stoi(two.data.substr(0, 2));
+	m2 = std::stoi(two.data.substr(3, 2));
+	y2 = std::stoi(two.data.substr(6, 4));
+	if (y1 > y2 || y2 > y1) // Patikrinama ar data1 didesnë uş data2. Jei datos lygios, visada graşiname false.
+		return y1 > y2;
+	else if (m1 > m2 || m2 > m1)
+		return m1 > m2;
+	else if (d1 > d2 || d2 > d1)
+		return d1 > d2;
+	else
+		return false;
+}
+
+
 

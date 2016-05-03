@@ -1,5 +1,6 @@
 #include "krovimas.h"
 
+
 std::vector<aparatas> aparatuSarasas;
 std::vector<std::string> aparataiCombo;
 
@@ -39,7 +40,7 @@ void ikrovimas() {
 				aparatuSarasas[i].aparatSutartys.push_back(temp);
 				std::getline(failas, aparatuSarasas[i].aparatSutartys.back().numeris, '^');
 				std::getline(failas, aparatuSarasas[i].aparatSutartys.back().tipas, '^');
-				std::getline(failas, aparatuSarasas[i].aparatSutartys.back().nuo, '^');
+				std::getline(failas, aparatuSarasas[i].aparatSutartys.back().data, '^');
 				std::getline(failas, aparatuSarasas[i].aparatSutartys.back().iki, '^');
 				failas.ignore(80, '\n');
 				break;
@@ -50,12 +51,12 @@ void ikrovimas() {
 	//Irasu krovimas (irasai struct) eil: aparatId, savininkas, data, meistras, pagrindas, miestas, gatve, nr, telefonai
 	failas.open("irasai.dat");
 	while (!failas.eof()) {
-		std::string temp;
-		std::getline(failas, temp, '^');
-		if (temp == "&&&")
+		std::string tempo;
+		std::getline(failas, tempo, '^');
+		if (tempo == "&&&")
 			break;
 		for (int i = 0; i < aparatuSarasas.size(); i++) {
-			if (temp == aparatuSarasas[i].ID) {
+			if (tempo == aparatuSarasas[i].ID) {
 				irasas temp;
 				aparatuSarasas[i].aparatIrasai.push_back(temp);
 				std::getline(failas, aparatuSarasas[i].aparatIrasai.back().savininkas, '^');
@@ -87,7 +88,7 @@ void ikrovimas() {
 				char test;
 				std::string testa;
 				aparatuSarasas[i].aparatRemontai.push_back(temp);
-				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().I_data, '^');
+				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().data, '^');
 				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().I_laikas, '^');
 				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().I_aprasymas, '^');
 				std::getline(failas, aparatuSarasas[i].aparatRemontai.back().I_kvietejas, '^');
@@ -132,14 +133,11 @@ void saugojimas() {
 	failas.open("remontai.dat");
 	for (int i = 0; i < aparatuSarasas.size(); i++) {
 		for (int j = 0; j < aparatuSarasas[i].aparatRemontai.size(); j++) {
-			failas << aparatuSarasas[i].ID << '^' << aparatuSarasas[i].aparatRemontai[j].I_data << '^' << aparatuSarasas[i].aparatRemontai[j].I_laikas << '^'
+			failas << aparatuSarasas[i].ID << '^' << aparatuSarasas[i].aparatRemontai[j].data << '^' << aparatuSarasas[i].aparatRemontai[j].I_laikas << '^'
 				<< aparatuSarasas[i].aparatRemontai[j].I_aprasymas << '^' << aparatuSarasas[i].aparatRemontai[j].I_kvietejas
 				<< '^' << aparatuSarasas[i].aparatRemontai[j].I_telefonas << '^' << aparatuSarasas[i].aparatRemontai[j].I_paskyrimas;
-			if (aparatuSarasas[i].aparatRemontai[j].A_data != "") {
-				if (aparatuSarasas[i].aparatRemontai[j].atlikta == true)
-					failas << '^' << "1" << '^';
-				else if (aparatuSarasas[i].aparatRemontai[j].atlikta == false)
-					failas << '^' << "0" << '^';
+			if (aparatuSarasas[i].aparatRemontai[j].atlikta == true) {
+				failas << '^' << "1" << '^';
 				failas << aparatuSarasas[i].aparatRemontai[j].A_data << '^' << aparatuSarasas[i].aparatRemontai[j].A_laikas << '^'
 					<< aparatuSarasas[i].aparatRemontai[j].A_aprasymas << '^' << aparatuSarasas[i].aparatRemontai[j].A_meistras
 					<< '^' << aparatuSarasas[i].aparatRemontai[j].A_pastabos << '^' <<'\n';
@@ -156,7 +154,7 @@ void saugojimas() {
 	for (int i = 0; i < aparatuSarasas.size(); i++) {
 		for (int j = 0; j < aparatuSarasas[i].aparatSutartys.size(); j++) {
 			failas << aparatuSarasas[i].ID << '^' << aparatuSarasas[i].aparatSutartys[j].numeris << '^' << aparatuSarasas[i].aparatSutartys[j].tipas << '^' <<
-				aparatuSarasas[i].aparatSutartys[j].nuo << '^' << aparatuSarasas[i].aparatSutartys[j].iki << '^' <<'\n';
+				aparatuSarasas[i].aparatSutartys[j].data << '^' << aparatuSarasas[i].aparatSutartys[j].iki << '^' <<'\n';
 		}
 	}
 	failas << "&&&";
@@ -186,5 +184,3 @@ void saugojimas() {
 	return;
 }
 
-void check() {
-}
